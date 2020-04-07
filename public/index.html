@@ -6,23 +6,24 @@
   <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="theme-color" content="#000000" />
-  <meta name="description" content="Web site created using create-react-app" />
-  <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
+  <meta name="description" content="My Portfolio" />
+  <meta name="authoer" content="Nick Muldrew">
+  <meta name="keywords" content="Nick Muldrew,Portfolio,HTML,CSS,JavaScript">
 
   <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
   <title>Portfolio Nick Muldrew</title>
 
   <!-- update the version number as needed -->
-  <script defer src="/__/firebase/7.12.0/firebase-app.js"></script>
-  <script src="/__/firebase/7.12.0/firebase-analytics.js"></script>
-  <script src="/__/firebase/init.js"></script>
+  <script defer src="/__/firebase/7.12.0/firebase-app.js" type="text/babel"></script>
+  <script src="/__/firebase/7.12.0/firebase-analytics.js" type="text/babel"></script>
+  <script src="/__/firebase/init.js" type="text/babel"></script>
   <!-- include only the Firebase features as you need -->
   <!--<script defer src="/__/firebase/7.12.0/firebase-auth.js"></script>
   <script defer src="/__/firebase/7.12.0/firebase-database.js"></script>
   <script defer src="/__/firebase/7.12.0/firebase-messaging.js"></script>
   <script defer src="/__/firebase/7.12.0/firebase-storage.js"></script>     -->
   <!-- initialize the SDK after all desired features are loaded -->
-  <script defer src="/__/firebase/init.js"></script>
+  <script defer src="/__/firebase/init.js" type="text/babel"></script>
 </head>
 
 <body>
@@ -40,14 +41,14 @@
       //
       // // 🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥
 
-      try {
-        let app = firebase.app();
-        let features = ['auth', 'database', 'messaging', 'storage'].filter(feature => typeof app[feature] === 'function');
-        document.getElementById('load').innerHTML = `Firebase SDK loaded with ${features.join(', ')}`;
-      } catch (e) {
-        console.error(e);
-        document.getElementById('load').innerHTML = 'Error loading the Firebase SDK, check the console.';
-      }
+      //try {
+      //  let app = firebase.app();
+      //  let features = ['auth', 'database', 'messaging', 'storage'].filter(feature => typeof app[feature] === 'function');
+      //  document.getElementById('load').innerHTML = `Firebase SDK loaded with ${features.join(', ')}`;
+      //} catch (e) {
+//console.error(e);
+      //  document.getElementById('load').innerHTML = 'Error loading the Firebase SDK, check the console.';
+      //}
     });
   </script>
 </body>

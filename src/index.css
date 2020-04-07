@@ -71,12 +71,12 @@ ul{
   max-width: var(--max-width);
 }
 
-#Intro{
-  margin-top: 0px;
+.Section a{
+  color: var(--form-text-color);
 }
 
-#Contact{
-  margin-top: 100px;
+#Intro{
+  margin-top: 0px;
 }
 
 img{
@@ -299,6 +299,7 @@ textarea {
    top: 0;
    float: right;
    background-color: white;
+   height: 53px;
    width: 100%;
    border-radius: 5px;
    z-index: 1;
@@ -372,6 +373,7 @@ textarea {
  @media screen and (max-height: 450px) {
   .sidenav {padding-top: 15px;}
   .sidenav a {font-size: 18px;}   
+  
 }
 
 @media screen and (max-width: 768px){
@@ -381,6 +383,8 @@ textarea {
      height: 0;
      visibility: hidden;
   }
+
+  .Section{margin-top: 40px;}
 
   #MenuIconContainer{      
      visibility: visible;

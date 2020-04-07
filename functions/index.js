@@ -22,8 +22,8 @@ exports.submit = functions.https.onRequest((req, res) => {
             from: req.body.email,
             replyTo: req.body.email,
             to: gmailEmail,
-            subject: `from my website ${req.body.subject}`,
-            text: req.body.message + `from ${req.body.name}`,
+            subject: `Message from my website`,
+            text: req.body.message,
             html: `<p>${req.body.message}`
         };
 
@@ -31,7 +31,7 @@ exports.submit = functions.https.onRequest((req, res) => {
 
         res.status(200).end();
         // or you can pass data to indicate success.
-        // res.status(200).send({isEmailSend: true});
+        //res.status(200).send({isEmailSend: true});
     });
 });
 

@@ -28,6 +28,7 @@ class Maze extends Component {
 
         this.state = {
             maze_cell_array: this.BuildArray(),
+            created: false,
         };
 
         maze_stack2 = [];
@@ -39,17 +40,6 @@ class Maze extends Component {
         maze_stack2.push(1);
         console.log(maze_stack2.pop())
     }
-
-    /*
-    componentDidMount(){
-        
-        var carArray = [{ name : 'Ford' , price : 15000 }, { name : 'toyota' , price : 12000 } , { name : 'Rover' , price : 14000 }];
-
-        this.setState({testarray: [ ...this.state.testarray, ... carArray]}, console.log(this.state));
-        
-        this.BuildArray();
-    }
-    */
 
     ResizeMaze(){
         var width = window.innerWidth - 40;
@@ -113,8 +103,9 @@ class Maze extends Component {
 
         var CurrentCell = new Point(0, 0);
         maze_stack2.push(CurrentCell);
-        console.log(maze_stack2);
+        //console.log(maze_stack2);
         this.RecursiveCreate(CurrentCell);
+        this.setState({created: true});
     }
 
     RecursiveCreate(CurrentCell) {
@@ -205,25 +196,30 @@ class Maze extends Component {
 
     SolveMaze() {
         var { maze_cell_array } = this.state;
-
-        maze_cell_array[0][0].StartFinsh = true;
-        maze_cell_array[EndPoint.X][EndPoint.Y].StartFinsh = true;
-
-        var current = new Point(0, 0);
-        maze_solver = [];
-
-        for (let i = 0; i < mazeWidth; i++) {
-            for (let k = 0; k < mazeHeight; k++) {
-                maze_cell_array[i][k].Visted = false;
-                maze_cell_array[i][k].Path = false;
-                maze_cell_array[i][k].BackTracked = false;
+        if(!this.state.created){
+            console.log("Maze Not created");
+        }else{
+            maze_cell_array[0][0].StartFinsh = true;
+            maze_cell_array[EndPoint.X][EndPoint.Y].StartFinsh = true;
+    
+            var current = new Point(0, 0);
+            maze_solver = [];
+    
+            for (let i = 0; i < mazeWidth; i++) {
+                for (let k = 0; k < mazeHeight; k++) {
+                    maze_cell_array[i][k].Visted = false;
+                    maze_cell_array[i][k].Path = false;
+                    maze_cell_array[i][k].BackTracked = false;
+                }
             }
+    
+            maze_solver.push(current);
+            this.forceUpdate();
+    
+            this.RecursiveSolver(current);
         }
 
-        maze_solver.push(current);
-        this.forceUpdate();
-
-        this.RecursiveSolver(current);
+        
     }
 
     RecursiveSolver(currentCell) {

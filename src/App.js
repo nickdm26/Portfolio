@@ -36,7 +36,6 @@ class App extends Component {
       <Router>
         <div id="main">
           <div id="myTopnav" className="topnav">
-            <a href="/">Logo</a>
             <div className="collapsetopnav">
               <a href="/">Home</a>
               <Link to="/Maze">Maze</Link>

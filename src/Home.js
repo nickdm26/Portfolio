@@ -7,6 +7,7 @@ import React_logo from './Images/React-logo.svg';
 import Git_logo from './Images/Git-logo.svg';
 import Python_logo from './Images/Python-logo.svg';
 import MySql_logo from './Images/mysql_logo.svg';
+import resume from './pdfs/Nicholas_Muldrew_CV_2020.pdf';
 
 import Contactform from "./contactForm"
 
@@ -20,7 +21,6 @@ class Home extends Component {
                         <h1>Software Developer</h1>
                         <p>Based in Dunedin, New Zealand</p>
                     </div>
-
 
                     <div id="AboutMe" className="Section">
 
@@ -93,6 +93,12 @@ class Home extends Component {
                             </a>
 
                         </div>
+                    </div>
+                    <div id="Resume" className="Section">
+                        <h3>Resume</h3>
+                        <a href={resume} document="Nick Muldrew Resume">View Resume</a>
+                        <br/>
+                        <a href={resume} download="Nick Muldrew Resume">Download Resume</a>
                     </div>
                     <Contactform />
 
