@@ -17,8 +17,6 @@ class temperature_api extends Component {
         console.log('componentDidMount')
         const API_KEY = functions.config().openweather.key
         const apiURL = `http://api.openweathermap.org/data/2.5/weather?q=Dunedin&units=metric&appid=${API_KEY}`;
-        //console.log(API_KEY)
-        //console.log(apiURL)
         fetch(apiURL)
             .then((res) => res.json())
             .then((result) => {

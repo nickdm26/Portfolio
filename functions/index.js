@@ -3,7 +3,7 @@ const cors = require('cors')({origin: true });
 const nodemailer = require('nodemailer');
 const mailgun = require("mailgun-js");
 const DOMAIN = 'sandbox9d25acca681d4fc49d9e32bd84af8122.mailgun.org';
-const api_key = '7b6884b728b2d1ca1d275192cfc527b8-f135b0f1-c8ab2f6e';
+const api_key = functions.config().mailgun.key;
 const mg = mailgun({apiKey: api_key, domain: DOMAIN});
 
 
