@@ -10,6 +10,7 @@ import MySql_logo from './Images/mysql_logo.svg';
 import resume from './pdfs/Nicholas_Muldrew_CV_2020.pdf';
 
 import Contactform from "./contactForm"
+import Temperature from "./temperature_api"
 
 class Home extends Component {
     render() {
@@ -20,6 +21,7 @@ class Home extends Component {
                         <h1>Nick Muldrew</h1>
                         <h1>Software Developer</h1>
                         <p>Based in Dunedin, New Zealand</p>
+                        <Temperature />
                     </div>
 
                     <div id="AboutMe" className="Section">
@@ -27,8 +29,8 @@ class Home extends Component {
                         <h3>About Me</h3>
                         <p className="left">
                             My passion is designing and creating new software, from a young age I’ve always enjoyed building and creating new things.
-                             This interest developed my passion further where I completed my Bachelor of Information Technology.
-                              I’m looking forward to progressing my skills and knowledge in a role that offers growth.
+                            This interest developed my passion further where I completed my Bachelor of Information Technology.
+                            I’m looking forward to progressing my skills and knowledge in a role that offers growth.
                         </p>
                     </div>
                     <div id="Interests" className="Section">
@@ -97,7 +99,7 @@ class Home extends Component {
                     <div id="Resume" className="Section">
                         <h3>Resume</h3>
                         <a href={resume} document="Nick Muldrew Resume">View Resume</a>
-                        <br/>
+                        <br />
                         <a href={resume} download="Nick Muldrew Resume">Download Resume</a>
                     </div>
                     <Contactform />
