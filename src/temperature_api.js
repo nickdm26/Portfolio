@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+const functions = require('firebase-functions');
 
 
 class temperature_api extends Component {
@@ -14,7 +15,10 @@ class temperature_api extends Component {
 
     componentDidMount() {
         console.log('componentDidMount')
-        const apiURL = 'http://api.openweathermap.org/data/2.5/weather?q=Dunedin&units=metric&appid=e255accb127713656a4d5d026720305d';
+        const API_KEY = functions.config().openweather.key
+        const apiURL = `http://api.openweathermap.org/data/2.5/weather?q=Dunedin&units=metric&appid=${API_KEY}`;
+        //console.log(API_KEY)
+        //console.log(apiURL)
         fetch(apiURL)
             .then((res) => res.json())
             .then((result) => {
